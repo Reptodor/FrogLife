@@ -6,12 +6,14 @@ public class ScaleChanger : MonoBehaviour
     
     public void ScaleChanging(float changeAmount)
     {
-        transform.localScale = new Vector3(transform.localScale.x + changeAmount * _scaleMultiple, transform.localScale.y + changeAmount * _scaleMultiple, transform.localScale.z + changeAmount * _scaleMultiple);
+        transform.localScale = new Vector3(transform.localScale.x + changeAmount * _scaleMultiple, transform.localScale.y + 
+            changeAmount * _scaleMultiple, transform.localScale.z + changeAmount * _scaleMultiple);
         
     }
     public void ExtraScaleChanging(float changeAmount)
     {
-        transform.localScale = new Vector3(transform.localScale.x + changeAmount * _scaleMultiple, transform.localScale.y + changeAmount * _scaleMultiple, transform.localScale.z + changeAmount * _scaleMultiple);
+        transform.localScale = new Vector3(transform.localScale.x + changeAmount * _scaleMultiple, transform.localScale.y + 
+            changeAmount * _scaleMultiple, transform.localScale.z + changeAmount * _scaleMultiple);
         
     }
 }

@@ -5,6 +5,7 @@ public class ExpirienceController : MonoBehaviour
 {
     [SerializeField] private GameObject _endGameMenu;
     [SerializeField] private GameObject _textInFinish;
+    [SerializeField] private GameObject _arrow;
     [SerializeField] private bool _isFirtsLevel;
     [SerializeField] private Image _expBar;
     [SerializeField] private float _expAmount = 100;
@@ -28,7 +29,11 @@ public class ExpirienceController : MonoBehaviour
 
         if (!_isFirtsLevel)
         {
-            if (_expCount >= _expAmount) _textInFinish.SetActive(true);
+            if (_expCount >= _expAmount)
+            {
+                _textInFinish.SetActive(true);
+                _arrow.SetActive(true);
+            }
         }
     }
     
@@ -57,6 +62,7 @@ public class ExpirienceController : MonoBehaviour
         if (_expCount >= _expAmount && other.gameObject.CompareTag("Finish"))
         {
             Destroy(_textInFinish);
+            Destroy(_arrow);
             _endGameMenu.SetActive(true);
         }
     }

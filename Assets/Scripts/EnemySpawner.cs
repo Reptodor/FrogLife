@@ -11,8 +11,6 @@ public class EnemySpawner : MonoBehaviour
     private float _randomY;
     private float _nextSpawn;
     private Vector2 _whereToSpawn;
-    public int FishDirection; 
-    
     
     public static int Spawned;
 

@@ -14,7 +14,7 @@ public class FrogExpirienceController : MonoBehaviour
     {
         if (_currentExpirience == _expirience)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(4);
         }
         ExpDisplay();
     }

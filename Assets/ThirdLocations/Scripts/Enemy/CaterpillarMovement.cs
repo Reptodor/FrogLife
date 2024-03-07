@@ -7,8 +7,6 @@ public class CaterpillarMovement : MonoBehaviour
     private float _caterpillarDirection;
     private Rigidbody2D _rigidbody;
     
-
-
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
