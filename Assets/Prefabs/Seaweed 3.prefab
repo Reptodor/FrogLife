@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8193912002059039137}
   - component: {fileID: 3008170058230983510}
   - component: {fileID: 1398519177167871890}
-  - component: {fileID: -298476713302434796}
-  - component: {fileID: 6081912257182943362}
+  - component: {fileID: -5244552477784946840}
+  - component: {fileID: -9153501255201637805}
   m_Layer: 0
   m_Name: Seaweed 3
   m_TagString: Untagged
@@ -142,11 +142,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 8891476659587319161}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d3d9e8dbf62e6c47a12651d4c204d7d, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d6aada6361103741935ac5e6a8d92e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _expInside: 4
---- !u!50 &-298476713302434796
+--- !u!114 &-5244552477784946840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8891476659587319161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c1831045980a8a48ab39f9c408dc99a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 0.2
+  _gravityForce: 0.3
+--- !u!50 &-9153501255201637805
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -161,7 +175,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.01
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -173,16 +187,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6081912257182943362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8891476659587319161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff325996b5cbbd447be2fe982e0c5a89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 0.2
