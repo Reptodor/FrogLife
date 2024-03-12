@@ -3,23 +3,25 @@ using UnityEngine;
 public class SeaweedSpawner : Respawner
 {
     [SerializeField] private GameObject[] _items;
-    [SerializeField] private float _spawnLimit;
+    [SerializeField] private int _spawnLimit;
     [SerializeField] private float _spawnDelay;
     private int _seaweedIndex;
     private float _nextSpawn;
+    private float _timeToSpawn;
     
     public static int Spawned;
 
     private void Awake()
     {
         Spawned = 0;
+        _timeToSpawn = 0;
     }
     
     private void Update()
     {
         Spawn();
     }
-
+    
     private void ChooseSeaweed()
     {
         _seaweedIndex = Random.Range(0, _items.Length);
@@ -27,7 +29,8 @@ public class SeaweedSpawner : Respawner
     
     private void Spawn()
     {
-        if (Time.time > _nextSpawn && Spawned < _spawnLimit)
+        _timeToSpawn += Time.deltaTime;
+        if (_timeToSpawn > _nextSpawn && Spawned < _spawnLimit)
         {
             ChooseSeaweed();
             _nextSpawn +=  _spawnDelay;

@@ -1,12 +1,11 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class TadpoleMovement : MonoBehaviour
 {
     [SerializeField] private float _speed;
-
     private Vector3 _tPosition;
-
     private bool _isMoving = false;
+    
     private void Update()
     {
         if (Input.GetMouseButton(0))

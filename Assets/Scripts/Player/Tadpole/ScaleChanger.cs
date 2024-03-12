@@ -10,10 +10,4 @@ public class ScaleChanger : MonoBehaviour
             changeAmount * _scaleMultiple, transform.localScale.z + changeAmount * _scaleMultiple);
         
     }
-    public void ExtraScaleChanging(float changeAmount)
-    {
-        transform.localScale = new Vector3(transform.localScale.x + changeAmount * _scaleMultiple, transform.localScale.y + 
-            changeAmount * _scaleMultiple, transform.localScale.z + changeAmount * _scaleMultiple);
-        
-    }
 }

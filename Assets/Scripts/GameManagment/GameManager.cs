@@ -21,6 +21,30 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+    public void CloseEscMenu()
+    {
+        _isEscMenuOpened = false;
+        Time.timeScale = 1;
+    }
+    
+    public void Play()
+    {
+        SceneManager.LoadScene(++_sceneNumber);
+        Time.timeScale = 1;
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(_sceneNumber);
+        Time.timeScale = 1;
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+    
     private void ControlEscMenu()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !_isEscMenuOpened)
@@ -33,22 +57,5 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1;
             _isEscMenuOpened = false;
         }
-    }
-
-    public void CloseEscMenu()
-    {
-        _isEscMenuOpened = false;
-        Time.timeScale = 1;
-    }
-    
-    public void Play()
-    {
-        SceneManager.LoadScene(_sceneNumber);
-        Time.timeScale = 1;
-    }
-
-    public void Quit()
-    {
-        Application.Quit();
     }
 }

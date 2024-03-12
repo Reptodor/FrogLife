@@ -28,8 +28,6 @@ public class Tutorial : MonoBehaviour
         {
             _tutorials[_tutorialIndex].SetActive(false);
             
-            Debug.Log("dsadsa");
-            
             if (_tutorialIndex < _tutorials.Length - 1)
             {
                 ChooseTutorialIndex();
