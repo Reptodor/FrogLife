@@ -3,11 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private int _sceneNumber;
+    [SerializeField] private int _nextSceneNumber;
     
     public void Play()
     {
-        SceneManager.LoadScene(_sceneNumber);
+        SceneManager.LoadScene(_nextSceneNumber);
     }
 
     public void Quit()

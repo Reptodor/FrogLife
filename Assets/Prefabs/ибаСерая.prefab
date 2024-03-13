@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8103384495848740972}
   - component: {fileID: 3348206323956501450}
   - component: {fileID: -7755699901708624799}
+  - component: {fileID: 4661688131918603444}
   m_Layer: 0
   m_Name: "\u0438\u0431\u0430\u0421\u0435\u0440\u0430\u044F"
   m_TagString: Untagged
@@ -168,9 +169,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 330098972797900250}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a52182deb6d47549b57a50cb63dd7ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 772da53a708a48f4e828fd2ca889be8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthController: {fileID: 7578611104998950255, guid: c922198bbcbd20642b564746c3b9d4c1, type: 3}
+  _speed: 2
+--- !u!114 &4661688131918603444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330098972797900250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0285ea4a010ad3468767b20617c7b46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _damage: 1
-  _speed: 1

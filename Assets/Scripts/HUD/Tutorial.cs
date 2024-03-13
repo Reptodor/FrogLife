@@ -3,6 +3,7 @@ using UnityEngine;
 public class Tutorial : MonoBehaviour
 {
     [SerializeField] private GameObject[] _tutorials;
+    [SerializeField] private GameObject[] _gameObjects;
     private int _tutorialIndex;
 
 
@@ -18,7 +19,10 @@ public class Tutorial : MonoBehaviour
 
     private void ShowTutorial()
     {
-        Time.timeScale = 0;
+        foreach (var gameObject in _gameObjects)
+        {
+            gameObject.SetActive(false);
+        }
         _tutorials[_tutorialIndex].SetActive(true);
     }
 
@@ -34,7 +38,10 @@ public class Tutorial : MonoBehaviour
             }
             else
             {
-                Time.timeScale = 1;
+                foreach (var gameObject in _gameObjects)
+                {
+                    gameObject.SetActive(true);
+                }
                 Destroy(gameObject);
             }
         }

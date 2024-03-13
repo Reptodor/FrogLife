@@ -10,13 +10,17 @@ public abstract class Respawner : MonoBehaviour
     private float _randomX;
     private float _randomY;
     
-    protected Vector2 ChoosePlace()
+    protected float ChooseHorizontalPosition()
     {
         _randomX = Random.Range(_leftBottomCorner.transform.position.x, _rightUpperCorner.transform.position.x);
-        _randomY = Random.Range(_leftBottomCorner.transform.position.y, _rightUpperCorner.transform.position.y);
-
-        _whereToSpawn = new Vector2(_randomX, _randomY);
         
-        return _whereToSpawn;
+        return _randomX;
+    }
+    
+    protected float ChooseVerticalPosition()
+    {
+        _randomY = Random.Range(_leftBottomCorner.transform.position.y, _rightUpperCorner.transform.position.y);
+        
+        return _randomY;
     }
 }

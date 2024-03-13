@@ -34,7 +34,7 @@ public class SeaweedSpawner : Respawner
         {
             ChooseSeaweed();
             _nextSpawn +=  _spawnDelay;
-            GameObject Item = Instantiate(_items[_seaweedIndex], ChoosePlace(), Quaternion.identity);
+            GameObject Item = Instantiate(_items[_seaweedIndex], new Vector2(ChooseHorizontalPosition(), ChooseVerticalPosition()), Quaternion.identity);
             Spawned++;
         }
     }
