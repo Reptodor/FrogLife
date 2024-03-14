@@ -6,9 +6,9 @@ public class FishAttacker : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponent<HealthController>() != null)
+        if (other.GetComponent<Health>() != null)
         {
-            other.GetComponent<HealthController>().RecieveDamage(_damage);
+            other.GetComponent<Health>().RecieveDamage(_damage);
         }
     }
 }

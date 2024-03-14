@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ArrowController : MonoBehaviour
+public class Arrow : MonoBehaviour
 {
     [SerializeField] private Transform _shore;
     [SerializeField] private GameObject _arrow;
