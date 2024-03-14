@@ -11131,7 +11131,7 @@ MonoBehaviour:
   _arrow: {fileID: 0}
   _endGameMenu: {fileID: 1895507379}
   _textInFinish: {fileID: 0}
-  _isFirtsLevel: 1
+  _isSecondLevel: 0
 --- !u!1 &1463907852
 GameObject:
   m_ObjectHideFlags: 0

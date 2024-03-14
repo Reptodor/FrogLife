@@ -5,7 +5,7 @@ public class LevelFinisher : MonoBehaviour
     [SerializeField] private GameObject _arrow;
     [SerializeField] private GameObject _endGameMenu;
     [SerializeField] private GameObject _textInFinish;
-    [SerializeField] private bool _isFirtsLevel;
+    [SerializeField] private bool _isSecondLevel;
     private ExperienceChanger _experienceChanger;
     private bool _isExperienceFull;
 
@@ -35,12 +35,11 @@ public class LevelFinisher : MonoBehaviour
 
     private void EndOfLevel()
     {
-        if (_isFirtsLevel)
+        if (!_isSecondLevel)
         {
             if (_isExperienceFull)
             {
                 _endGameMenu.SetActive(true);
-                Time.timeScale = 0;
             }
         }
         else

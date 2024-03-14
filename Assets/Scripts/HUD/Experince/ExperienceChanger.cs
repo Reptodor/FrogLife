@@ -2,10 +2,8 @@ using UnityEngine;
 
 public class ExperienceChanger : MonoBehaviour
 {
-    private ScaleChanger _scaleChanger;
-
-
     [SerializeField] private float _amountExperience = 100;
+    private ScaleChanger _scaleChanger;
     private float _currentExperience;
     
     private void Awake()

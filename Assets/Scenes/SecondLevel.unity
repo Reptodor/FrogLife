@@ -14264,7 +14264,7 @@ MonoBehaviour:
   _arrow: {fileID: 617470851}
   _endGameMenu: {fileID: 1895507379}
   _textInFinish: {fileID: 61503959}
-  _isFirtsLevel: 0
+  _isSecondLevel: 1
 --- !u!114 &1457125722
 MonoBehaviour:
   m_ObjectHideFlags: 0

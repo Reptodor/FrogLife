@@ -30,14 +30,14 @@ public class GameManager : MonoBehaviour
     
     public void Play()
     {
-        SceneManager.LoadScene(++_sceneNumber);
         Time.timeScale = 1;
+        SceneManager.LoadScene(++_sceneNumber);
     }
 
     public void Restart()
     {
-        SceneManager.LoadScene(_sceneNumber);
         Time.timeScale = 1;
+        SceneManager.LoadScene(_sceneNumber);
     }
 
     public void Quit()
@@ -49,8 +49,8 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !_isEscMenuOpened)
         {
-            _isEscMenuOpened = true;
             Time.timeScale = 0;
+            _isEscMenuOpened = true;
         }
         else if (_isEscMenuOpened && Input.GetKeyDown(KeyCode.Escape))
         {
