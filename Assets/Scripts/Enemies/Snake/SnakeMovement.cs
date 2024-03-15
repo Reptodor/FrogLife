@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CaterpillarMovement : MonoBehaviour
+public class SnakeMovement : MonoBehaviour
 {
     [SerializeField] private float _speed;
     private Rigidbody2D _rigidbody;
@@ -17,14 +17,16 @@ public class CaterpillarMovement : MonoBehaviour
 
     private void EnemyMove()
     {
+        _rigidbody.velocity = new Vector2(0, 0);
         _rigidbody.AddForce(transform.right * _speed, ForceMode2D.Force);
+        _speed -= Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Wall"))
         {
-            CaterpillarSpawner.Spawned--;
+            SnakeSpawner.Spawned--;
             Destroy(gameObject);
         }
     }
