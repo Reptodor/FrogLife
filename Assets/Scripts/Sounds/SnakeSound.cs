@@ -4,14 +4,28 @@ using UnityEngine.Events;
 public class SnakeSound : MonoBehaviour
 {
     [SerializeField] private UnityEvent _hissEvent;
-    [SerializeField] private GameObject _player;
+    [SerializeField] private LayerMask _player;
     [SerializeField] private float _seeDistance;
+    [SerializeField] private bool _seePlayer;
+    private SnakeSound _snakeSound;
+
+    private void Awake()
+    {
+        _snakeSound = this;
+    }
+    
     private void Update()
     {
-        if (_player.transform.position.x - transform.position.x > _seeDistance ||
-            _player.transform.position.x - transform.position.x > -_seeDistance)
+        SearchingForPlayer();
+        if (_seePlayer)
         {
             _hissEvent.Invoke();
+            _snakeSound.enabled = false;
         }    
+    }
+
+    private void SearchingForPlayer()
+    {
+        _seePlayer = Physics2D.Raycast(transform.position, Vector2.left, _seeDistance, _player);
     }
 }

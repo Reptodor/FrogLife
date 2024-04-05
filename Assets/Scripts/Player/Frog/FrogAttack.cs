@@ -5,7 +5,7 @@ public class FrogAttack : MonoBehaviour
     private ExperienceChanger _experienceChanger;
     public static FrogAttack FrogAttackInstance;
     public bool CanAttack = true;
-
+    public bool CanEat;
 
     private void Awake()
     {
@@ -23,16 +23,20 @@ public class FrogAttack : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && CanAttack)
         {
             PlayerAnimation.PlayerAnimationInstance.AttackAnimating();
+            CanEat = true;
         }
     }
-
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.GetComponent<CaterpillarMovement>() != null)
         {
-            CaterpillarSpawner.Spawned--;
-            Destroy(other.gameObject);
-            _experienceChanger.GainingExperience(1);
+            if (CanEat)
+            {
+                CaterpillarSpawner.Spawned--;
+                Destroy(other.gameObject);
+                _experienceChanger.GainingExperience(1);
+            }
         }
     }
 }

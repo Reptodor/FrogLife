@@ -20,6 +20,7 @@ public class AttackBehaviour : StateMachineBehaviour
     {
         FrogMovement.FrogMovementInstance.enabled = true;
         FrogAttack.FrogAttackInstance.CanAttack = true;
+        FrogAttack.FrogAttackInstance.CanEat = false;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
