@@ -9,10 +9,9 @@ public class SnakeSound : MonoBehaviour
     [SerializeField] private bool _seePlayer;
     private SnakeSound _snakeSound;
 
-    private void Awake()
-    {
-        _snakeSound = this;
-    }
+    private void Awake() => _snakeSound = this;
+    
+    private void SearchingForPlayer() => _seePlayer = Physics2D.Raycast(transform.position, Vector2.left, _seeDistance, _player);
     
     private void Update()
     {
@@ -22,10 +21,5 @@ public class SnakeSound : MonoBehaviour
             _hissEvent.Invoke();
             _snakeSound.enabled = false;
         }    
-    }
-
-    private void SearchingForPlayer()
-    {
-        _seePlayer = Physics2D.Raycast(transform.position, Vector2.left, _seeDistance, _player);
     }
 }

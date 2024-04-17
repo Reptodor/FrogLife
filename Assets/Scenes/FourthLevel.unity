@@ -515,6 +515,7 @@ GameObject:
   - component: {fileID: 89390677}
   - component: {fileID: 89390679}
   - component: {fileID: 89390678}
+  - component: {fileID: 89390680}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -648,8 +649,105 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 789eb69a13c566044b28f6a07a03a817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _takingDamageScream: {fileID: 89390680}
   _amountHealth: 2
   _currentScene: 4
+--- !u!82 &89390680
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89390673}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d608af880a29225419190d9bfb49a894, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &144608856
 GameObject:
   m_ObjectHideFlags: 0
@@ -2664,7 +2762,7 @@ GameObject:
   - component: {fileID: 846710877}
   - component: {fileID: 846710876}
   - component: {fileID: 846710878}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6664,7 +6762,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e7a1884c97ba5c8408fa72354c328663, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e14be642bd4472c44bb52628b8716946, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.065
   m_Pitch: 1
@@ -7123,23 +7221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8aef3c4233c464982bd394dbf8b8fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeToSound: 3
-  _timer: 0
-  _playerSound:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2108715610}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  _playerSound: {fileID: 2108715610}
+  _timeToSound: 2.5
 --- !u!1 &2129253113
 GameObject:
   m_ObjectHideFlags: 0
@@ -7179,6 +7262,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1593105465410556708, guid: a4942bcc8ff766542869450fa9c31b33, type: 3}
+      propertyPath: m_Volume
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 2936678244228686511, guid: a4942bcc8ff766542869450fa9c31b33, type: 3}
       propertyPath: m_Name
       value: Snake

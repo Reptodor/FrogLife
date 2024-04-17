@@ -1,20 +1,30 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 public class PlayerSound : MonoBehaviour
 {
+    [SerializeField] private AudioSource _playerSound;
     [SerializeField] private float _timeToSound;
-    [SerializeField] private float _timer;
-    [SerializeField] private UnityEvent _playerSound;
-    
+    private float _timer;
+    private bool _isMoving;
+
     private void Update()
     {
+        CheckForMoving();
         _timer += Time.deltaTime;
 
-        if (_timer >= _timeToSound)
+        if (_timer >= _timeToSound && !_isMoving)
         {
-            _playerSound.Invoke();
+            _playerSound.Play();
             _timer = 0;
         }
     }
+
+    private void CheckForMoving()
+    {
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+            _isMoving = true;
+        else
+            _isMoving = false;
+    }
+
 }
