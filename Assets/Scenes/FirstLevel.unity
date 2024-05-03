@@ -10889,7 +10889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _arrow: {fileID: 0}
-  _endGameMenu: {fileID: 0}
+  _endGameMenu: {fileID: 179795811}
   _textInFinish: {fileID: 0}
   _isSecondLevel: 0
 --- !u!82 &1457125722

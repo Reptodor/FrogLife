@@ -461,7 +461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _arrow: {fileID: 0}
-  _endGameMenu: {fileID: 0}
+  _endGameMenu: {fileID: 1965079547}
   _textInFinish: {fileID: 0}
   _isSecondLevel: 0
 --- !u!1 &101065749
