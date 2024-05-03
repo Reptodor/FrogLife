@@ -1,31 +1,26 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] private AudioSource _takingDamageScream;
     [SerializeField] private float _amountHealth;
-    [SerializeField] private int _currentScene;
     private float _currentHealth;
 
+    public UnityEvent<float> OnHealthChanged;
 
     private void Awake() => _currentHealth = _amountHealth;
-
-    private void Update() => CheckingDeath();
+    
+    public float GetTheCurrentHealthPercentage()
+    {
+        return _currentHealth / _amountHealth;
+    }
     
     public void RecieveDamage(int damage)
     {
         _currentHealth -= damage; 
         _takingDamageScream.Play();
-    }
-    
-    public float CalculateTheDifferenceHealth()
-    {
-        return _currentHealth / _amountHealth;
-    }
-    
-    private void CheckingDeath()
-    {
-        if(_currentHealth == 0) SceneManager.LoadScene(_currentScene);
+        OnHealthChanged.Invoke(GetTheCurrentHealthPercentage());
+        if(_currentHealth <= 0) SceneLoader.SceneLoaderInstance.RestartCurrentScene();
     }
 }

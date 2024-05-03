@@ -12,8 +12,12 @@ public class CaterpillarSpawner : MonoBehaviour
     private Vector2 _whereToSpawn;
     
     public static int Spawned;
-
-
+    
+    private void Awake()
+    {
+        Spawned = 0;
+    }
+    
     private void Update()
     {
         CaterpillarSpawn();

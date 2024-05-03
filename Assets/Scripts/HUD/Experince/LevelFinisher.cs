@@ -1,4 +1,4 @@
-using UnityEngine;
+ using UnityEngine;
 
 public class LevelFinisher : MonoBehaviour
 {    
@@ -23,7 +23,7 @@ public class LevelFinisher : MonoBehaviour
 
     private void ExperienceCheck()
     {
-        if (_experienceChanger.CalculateTheDifferenceExperience() >= 1)
+        if (_experienceChanger.GetTheCurrentExperiencePercentage() >= 1)
         {
             _isExperienceFull = true;
         }

@@ -6,15 +6,12 @@ public class ExperienceDisplayer : MonoBehaviour
     [SerializeField] private Image _experienceBar;
     private ExperienceChanger _experienceChanger;
     
-
-    private void Update()
+    private void Awake()
     {
         _experienceChanger = GetComponent<ExperienceChanger>();
-        ShowExpBar();
-    }
-    
-    public void ShowExpBar()
-    {
-        _experienceBar.fillAmount = _experienceChanger.CalculateTheDifferenceExperience();
+        _experienceChanger.OnExperienceChanged.AddListener((experience) =>
+        {
+            _experienceBar.fillAmount = experience;
+        });
     }
 }

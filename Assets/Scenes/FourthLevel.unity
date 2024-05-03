@@ -651,7 +651,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _takingDamageScream: {fileID: 89390680}
   _amountHealth: 2
-  _currentScene: 4
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!82 &89390680
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4617,7 +4619,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _escMenu: {fileID: 1442015343}
-  _sceneNumber: 3
   _isEscMenuOpened: 0
 --- !u!4 &1341629652
 Transform:
@@ -5752,6 +5753,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672534481}
   m_CullTransparentMesh: 1
+--- !u!1 &1678606909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1678606911}
+  - component: {fileID: 1678606910}
+  m_Layer: 0
+  m_Name: SceneLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1678606910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678606909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641a15c4b8b7acd439dea24bb88c79a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentSceneNumber: 9
+--- !u!4 &1678606911
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678606909}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -17.440376, y: 130.56583, z: -30.896805}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1687581840
 GameObject:
   m_ObjectHideFlags: 0
@@ -7340,3 +7386,4 @@ SceneRoots:
   - {fileID: 87711669}
   - {fileID: 2091643856}
   - {fileID: 2158434116986462105}
+  - {fileID: 1678606911}

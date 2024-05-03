@@ -1,24 +1,15 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject _escMenu;
-    [SerializeField] private int _sceneNumber;
     [SerializeField] private bool _isEscMenuOpened = false;
 
     private void Update()
     {
         ControlEscMenu();
-
-        if (_isEscMenuOpened)
-        {
-            _escMenu.SetActive(true);
-        }
-        else
-        {
-            _escMenu.SetActive(false);
-        }
+        
+        _escMenu.SetActive(_isEscMenuOpened);
     }
 
 
@@ -31,13 +22,13 @@ public class GameManager : MonoBehaviour
     public void Play()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(++_sceneNumber);
+        SceneLoader.SceneLoaderInstance.LoadNextScene();
     }
 
     public void Restart()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(_sceneNumber);
+        SceneLoader.SceneLoaderInstance.RestartCurrentScene();
     }
 
     public void Quit()

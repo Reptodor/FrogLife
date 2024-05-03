@@ -35,7 +35,7 @@ public class FrogAttack : MonoBehaviour
             {
                 CaterpillarSpawner.Spawned--;
                 Destroy(other.gameObject);
-                _experienceChanger.GainingExperience(1);
+                _experienceChanger.GainExperience(1);
             }
         }
     }

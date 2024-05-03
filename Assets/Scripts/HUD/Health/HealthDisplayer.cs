@@ -9,15 +9,10 @@ public class HealthDisplayer : MonoBehaviour
     private void Awake()
     {
         _health = GetComponent<Health>();
-    }
-    
-    private void Update()
-    {
-        ShowHealthBar();    
-    }
-    
-    private void ShowHealthBar()
-    {
-        _healthBar.fillAmount = _health.CalculateTheDifferenceHealth();
+        
+        _health.OnHealthChanged.AddListener(health =>
+        {
+            _healthBar.fillAmount = health;
+        });
     }
 }

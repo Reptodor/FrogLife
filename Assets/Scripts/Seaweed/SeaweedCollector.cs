@@ -8,7 +8,7 @@ public class SeaweedCollector : MonoBehaviour
     {
         if (other.gameObject.GetComponent<ExperienceChanger>())
         {
-            other.gameObject.GetComponent<ExperienceChanger>().GainingExperience(_experienceInside);
+            other.gameObject.GetComponent<ExperienceChanger>().GainExperience(_experienceInside);
             SeaweedSpawner.Spawned--;
             Destroy(gameObject);
         }

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Finisher : MonoBehaviour
 {
@@ -7,7 +6,7 @@ public class Finisher : MonoBehaviour
     {
         if (other.gameObject.GetComponent<FrogMovement>() != null)
         {
-            SceneManager.LoadScene(5);
+            SceneLoader.SceneLoaderInstance.LoadNextScene();
         }
     }
 }

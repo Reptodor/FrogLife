@@ -6,7 +6,6 @@ public class Tutorial : MonoBehaviour
     [SerializeField] private GameObject[] _gameObjects;
     private int _tutorialIndex;
 
-
     private void Awake()
     {
         ShowTutorial();

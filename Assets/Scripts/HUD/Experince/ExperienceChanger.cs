@@ -1,33 +1,34 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ExperienceChanger : MonoBehaviour
 {
     [SerializeField] private float _amountExperience = 100;
     private ScaleChanger _scaleChanger;
     private float _currentExperience;
-    
+
+    public UnityEvent<float> OnExperienceChanged;
+
     private void Awake()
     {
         _scaleChanger = GetComponent<ScaleChanger>();
+        _currentExperience = 0;
     }
 
-    public float CalculateTheDifferenceExperience()
+    public float GetTheCurrentExperiencePercentage()
     {
         return _currentExperience / _amountExperience;
     }
     
-    public void GainingExperience(int gainedExperience)
+    public void GainExperience(int gainedExperience)
     {
-
-        if (_currentExperience < 70)
+        if (_currentExperience >= 70)
         {
-            _currentExperience += gainedExperience;
-            _scaleChanger.ScaleChanging(gainedExperience);
+            gainedExperience *= 2;
         }
-        else
-        {
-            _currentExperience += gainedExperience * 2;
-            _scaleChanger.ScaleChanging(gainedExperience * 2f);
-        }
+        
+        _currentExperience += gainedExperience;
+        _scaleChanger.ChangeScale(gainedExperience);
+        OnExperienceChanged.Invoke(GetTheCurrentExperiencePercentage());
     }
 }
