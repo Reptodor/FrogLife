@@ -11,8 +11,7 @@ public class GameManager : MonoBehaviour
         
         _escMenu.SetActive(_isEscMenuOpened);
     }
-
-
+    
     public void CloseEscMenu()
     {
         _isEscMenuOpened = false;

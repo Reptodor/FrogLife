@@ -19,10 +19,8 @@ public class FrogMovement : MonoBehaviour
         Flip();
     }
 
-    private void FixedUpdate()
-    {
-        Move();
-    }
+    private void FixedUpdate() => Move();
+    
 
     private void GetAxis()
     {

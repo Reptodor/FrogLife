@@ -2,10 +2,16 @@ using UnityEngine;
 
 public class TadpoleMovement : MonoBehaviour
 {
+    [Header("Movement")]
     [SerializeField] private float _speed;
     private Vector3 _tPosition;
     private bool _isMoving = false;
-    
+
+    [Header("Wall Check")]
+    [SerializeField] private LayerMask _wallLayer;
+    [SerializeField] private float _allowedDistanceToWall;
+    [SerializeField] private bool _seeWall;
+
     private void Update()
     {
         if (Input.GetMouseButton(0))
@@ -27,14 +33,26 @@ public class TadpoleMovement : MonoBehaviour
 
         _isMoving = true;
     }
+
     private void Movement(float speed)
     {
-        transform.position = Vector3.MoveTowards(transform.position, _tPosition, speed * Time.deltaTime);
+        CheckForWall();
 
-        if (transform.position == _tPosition)
+        if (!CheckForWall())
         {
-            _isMoving = false;
+            transform.position = Vector3.MoveTowards(transform.position, _tPosition, speed * Time.deltaTime);
+            if (transform.position == _tPosition)
+            {
+                _isMoving = false;
+            }
         }
+    }
+
+    private bool CheckForWall()
+    {
+        _seeWall = Physics2D.Raycast(transform.position, Vector2.up, _allowedDistanceToWall, _wallLayer);
+
+        return _seeWall;
     }
 
     private void TransformRotation()
@@ -42,6 +60,5 @@ public class TadpoleMovement : MonoBehaviour
         Vector3 touchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 direction = new Vector2(touchPosition.x - transform.position.x, touchPosition.y - transform.position.y);
         transform.up = direction;
-        
     }
 }

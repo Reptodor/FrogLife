@@ -6,11 +6,15 @@ public class LevelFinisher : MonoBehaviour
     [SerializeField] private GameObject _endGameMenu;
     [SerializeField] private GameObject _textInFinish;
     [SerializeField] private bool _isSecondLevel;
+
     private ExperienceChanger _experienceChanger;
+    private Health _health;
+
     private bool _isExperienceFull;
 
     private void Awake()
     {
+        _health = GetComponent<Health>();
         _experienceChanger = GetComponent<ExperienceChanger>();
         _isExperienceFull = false;
     }
@@ -19,6 +23,12 @@ public class LevelFinisher : MonoBehaviour
     {
         ExperienceCheck();
         EndOfLevel();
+
+        if (_health.GetTheCurrentHealthPercentage() <= 0)
+        {
+            Destroy(_textInFinish);
+            Destroy(_arrow);
+        }
     }
 
     private void ExperienceCheck()
