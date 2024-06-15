@@ -1,9 +1,15 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class ExperienceChanger : MonoBehaviour
 {
+    [SerializeField] private GameObject _endLevelUI;
     [SerializeField] private float _amountExperience = 100;
+    [SerializeField] private float _percentToMultiplier = 0.7f;
+
+    private const int _gainedExperienceMultiplier = 2;
+
     private ScaleChanger _scaleChanger;
     private float _currentExperience;
 
@@ -15,20 +21,29 @@ public class ExperienceChanger : MonoBehaviour
         _currentExperience = 0;
     }
 
-    public float GetTheCurrentExperiencePercentage()
+    public float GetCurrentExperiencePercent()
     {
         return _currentExperience / _amountExperience;
     }
-    
+
     public void GainExperience(int gainedExperience)
     {
-        if (_currentExperience >= 70)
-        {
-            gainedExperience *= 2;
-        }
-        
+        if (gainedExperience < 0)
+            throw new ArgumentOutOfRangeException(nameof(gainedExperience));
+
+        if (GetCurrentExperiencePercent() >= _percentToMultiplier)
+            gainedExperience *= _gainedExperienceMultiplier;
+
         _currentExperience += gainedExperience;
         _scaleChanger.ChangeScale(gainedExperience);
-        OnExperienceChanged.Invoke(GetTheCurrentExperiencePercentage());
+        OnExperienceChanged.Invoke(GetCurrentExperiencePercent());
+
+        if (_currentExperience >= _amountExperience)
+            CompleteLevel();
+    }
+
+    private void CompleteLevel()
+    {
+        _endLevelUI.SetActive(true);
     }
 }

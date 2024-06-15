@@ -16,11 +16,6 @@ public class Health : MonoBehaviour
         _currentHealth = _amountHealth;
         _loseMenu.SetActive(false);
     }
-
-    public float GetTheCurrentHealthPercentage()
-    {
-        return _currentHealth / _amountHealth;
-    }
     
     public void RecieveDamage(int damage)
     {
@@ -29,7 +24,7 @@ public class Health : MonoBehaviour
         
         _currentHealth -= damage; 
         _takingDamageScream.Play();
-        OnHealthChanged.Invoke(GetTheCurrentHealthPercentage());
+        OnHealthChanged.Invoke(_currentHealth / _amountHealth);
 
         if (_currentHealth <= 0)
         {
