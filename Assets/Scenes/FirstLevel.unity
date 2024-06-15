@@ -11068,7 +11068,6 @@ GameObject:
   - component: {fileID: 1457125716}
   - component: {fileID: 1457125720}
   - component: {fileID: 1457125719}
-  - component: {fileID: 1457125721}
   - component: {fileID: 1457125723}
   - component: {fileID: 1457125717}
   - component: {fileID: 1457125722}
@@ -11295,26 +11294,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae8149bd7085f56418a04fc529f76d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _endLevelUI: {fileID: 179795811}
   _amountExperience: 100
+  _percentToMultiplier: 0.7
   OnExperienceChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1457125721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1457125708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b317a5314f047b439595a2eaee10230, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _arrow: {fileID: 0}
-  _endGameMenu: {fileID: 179795811}
-  _textInFinish: {fileID: 0}
-  _isSecondLevel: 0
 --- !u!82 &1457125722
 AudioSource:
   m_ObjectHideFlags: 0

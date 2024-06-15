@@ -296,7 +296,6 @@ GameObject:
   - component: {fileID: 89390677}
   - component: {fileID: 89390680}
   - component: {fileID: 89390679}
-  - component: {fileID: 89390682}
   - component: {fileID: 89390681}
   m_Layer: 0
   m_Name: Player
@@ -431,7 +430,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae8149bd7085f56418a04fc529f76d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _endLevelUI: {fileID: 1965079547}
   _amountExperience: 10
+  _percentToMultiplier: 0.7
   OnExperienceChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -448,22 +449,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scaleMultiple: 0
---- !u!114 &89390682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 89390673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b317a5314f047b439595a2eaee10230, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _arrow: {fileID: 0}
-  _endGameMenu: {fileID: 1965079547}
-  _textInFinish: {fileID: 0}
-  _isSecondLevel: 0
 --- !u!1 &101065749
 GameObject:
   m_ObjectHideFlags: 0
